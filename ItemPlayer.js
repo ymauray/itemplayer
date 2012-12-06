@@ -111,6 +111,7 @@ jQuery(document).ready(function($) {
 	});
 	
 	$('.itemplayer-volume').click(function(e) {
+		e = fixFirefox(e);
 		var volume = parseInt(100 * (e.offsetX / $(this).outerWidth()));
 		var id = $(this).attr('itemplayer-id');
 		var player = $('.itemplayer#' + id);
