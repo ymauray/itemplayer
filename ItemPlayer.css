@@ -126,14 +126,22 @@
 	font-size: 2em;
 	position: absolute;
 	top: 0;
-	/*left: 1.8em;*/
 	left: 6.3em;
 	height: 1.4em;
+	width: 6.5em;
 	padding-top: 0.4em;
-	padding-left: 0.25em;
-	padding-right: 0.25em;
+	text-align: center;
 	border-right: 1px solid #DDDDDD;
 	border-left: 1px solid #DDDDDD;
+}
+
+.itemplayer-post-title {
+	position: absolute;
+	top: 0;
+	left: 12.8em;
+	font-size: 2em;
+	padding-top: 0.4em;
+	margin-left: .5em;
 }
 
 .itemplayer-scrubber {

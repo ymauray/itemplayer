@@ -50,4 +50,30 @@ function itemplayer_enqueue_scripts() {
 add_shortcode('itemplayer', 'itemplayer_shortcode');
 add_action('wp_enqueue_scripts', 'itemplayer_enqueue_scripts');
 
+add_filter('powerpress_player', 'powerpress_itemplayer', 0, 3);
+
+function powerpress_itemplayer($content, $media_url, $EpisodeData = array()) {
+	
+	global $post;
+	
+	remove_filter('powerpress_player', 'powerpressplayer_player_audio', 10, 3);
+
+	if( empty($post->ID) || !is_object($post) )
+		return powerpressplayer_player_audio($content, $media_url, $EpisodeData);
+	
+	$waveform = get_post_meta($post->ID, 'waveform', TRUE);
+	
+	if (empty($waveform)) {
+		return powerpressplayer_player_audio($content, $media_url, $EpisodeData);
+	}
+	
+	$title = get_the_title($post->ID);
+	
+	$html  = '<div class="itemplayer" enclosure="' . $media_url . '">';
+	$html .= '<div class="itemplayer-controls"><div class="itemplayer-wrapper"><div class="itemplayer-play"></div><div class="itemplayer-pause"></div></div><div class="itemplayer-volume-wrapper"><div class="itemplayer-volume-background"></div><div class="itemplayer-volume-indicator"></div><div class="itemplayer-volume"><!-- div class="itemplayer-volume-cursor"></div --></div></div><div class="itemplayer-clock"><span class="itemplayer-current">00:00</span>&nbsp;/&nbsp;<span class="itemplayer-total">00:00</span></div><div class="itemplayer-post-title">' . $title . '</div></div>';
+	$html .= '<div class="itemplayer-scrubber"><div class="itemplayer-progress"></div><div class="itemplayer-waveform" style="background-image: url(' . $waveform . ');"></div><div class="itemplayer-playhead"></div></div>';
+	$html .= '</div>';
+	
+	return $html;
+}
 ?>
