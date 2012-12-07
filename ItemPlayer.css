@@ -5,6 +5,8 @@
 	border: 1px solid #CCCCCC;
 	position: relative;
 	height: 11em;
+	text-align: left;
+	overflow: hidden;
 }
 
 .itemplayer-controls {
@@ -142,12 +144,12 @@
 	font-size: 2em;
 	padding-top: 0.4em;
 	margin-left: .5em;
+	width: 9999px;
 }
 
 .itemplayer-scrubber {
 	margin: .5em;
 	height: 6em;
- 	/*background-color: #3A2820;*/
  	background-color: #2C2C2C;
 	position: relative;
 	left: 0;
