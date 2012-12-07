@@ -45,6 +45,9 @@ function itemplayer_enqueue_scripts() {
 	);
 	wp_localize_script('itemplayer-scritps', 'itemplayer_params', $translation_array);
 	wp_enqueue_script('itemplayer-scritps');
+	
+	wp_register_script('itemplayer-soundmanager', plugins_url('js/soundmanager2.js', __FILE__));
+	wp_enqueue_script('itemplayer-soundmanager');
 }
 
 add_shortcode('itemplayer', 'itemplayer_shortcode');
