@@ -4,23 +4,18 @@
 	font-size: 8px;
 	border: 1px solid #CCCCCC;
 	position: relative;
-	height: 11em;
 	text-align: left;
 	overflow: hidden;
+	height: 10em;
 }
 
-.itemplayer-controls {
-	border-bottom: 1px solid #DDDDDD;
+.itemplayer-buttons {
 	position: absolute;
-	width: 100%;
-	height: 3.6em;
-}
-
-.itemplayer-wrapper {
+	font-size: 2.8em;
 	padding: .5em;
-	display: inline-block;
 	border-right: 1px solid #DDDDDD;
-	height: 2.6em;
+	display: inline-block;
+	z-index: 10;
 }
 
 .itemplayer-play {
@@ -73,24 +68,30 @@
 	height: 1.3em;
 }
 
+.itemplayer-content-wrapper {
+	padding-left: 10em;
+	height: 10em;
+}
+
+.itemplayer-controls {
+/* 	background-color: pink; */
+	height: 3em;
+	border-bottom: 1px solid #DDDDDD;
+}
+
 .itemplayer-volume-wrapper {
-    position: absolute;
-    left: 3.6em;
-    top: 0;
     width: 8em;
     height: 2em;
-    margin-left: .5em;
-    margin-right: .5em;
-    margin-top: .8em;
+    border: .5em solid white;
+    position: relative;
+	display: inline-block;
 }
 
 .itemplayer-volume-background {
-    position: absolute;
+	position: absolute;
     background-color: #2C2C2C;
-    top: 0;
-    left: 0;
-    width: 8em;
-    height: 2em;
+    width: 100%;
+    height: 100%;
 }
 
 .itemplayer-volume-indicator {
@@ -114,46 +115,34 @@
     border-bottom: 1em solid transparent;
 }
 
-.itemplayer-volume-cursor {
-    position: absolute;
-    top: -1.25em;
-    left: -.2em;
-    height: 2.5em;
-    width: .4em;
-    background-color: #CCCCCC;
-    border: 1px solid black;
-}
-
 .itemplayer-clock {
-	font-size: 2em;
 	position: absolute;
-	top: 0;
-	left: 6.3em;
-	height: 1.4em;
-	width: 6.5em;
-	padding-top: 0.4em;
+	font-size: 2em;
+	line-height: 1.5em;
 	text-align: center;
+	display: inline-block;
+	width: 7em;
+	height: 1.5em;
 	border-right: 1px solid #DDDDDD;
 	border-left: 1px solid #DDDDDD;
 }
 
 .itemplayer-post-title {
 	position: absolute;
+	display: inline-block;
 	top: 0;
-	left: 12.8em;
+	left: 17em;
+	line-height: 1.5em;
 	font-size: 2em;
-	padding-top: 0.4em;
-	margin-left: .5em;
 	width: 9999px;
 }
 
 .itemplayer-scrubber {
-	margin: .5em;
-	height: 6em;
- 	background-color: #2C2C2C;
 	position: relative;
-	left: 0;
-	top: 4em;
+/* 	border: .5em solid white; */
+/* 	height: 6em; */
+	height: 7em;
+ 	background-color: #2C2C2C;
 }
 
 .itemplayer-progress {
