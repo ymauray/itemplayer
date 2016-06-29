@@ -71,24 +71,32 @@ function itemplayer_enqueue_scripts() {
 add_shortcode('itemplayer', 'itemplayer_shortcode');
 add_action('wp_enqueue_scripts', 'itemplayer_enqueue_scripts');
 
-add_filter('powerpress_player', 'powerpress_itemplayer', 0, 3);
+add_filter('powerpress_player', 'powerpress_itemplayer', 9, 3);
 
 function powerpress_itemplayer($content, $media_url, $EpisodeData = array()) {
 	
 	global $post;
-	
+
+	$has_filter = has_filter( 'powerpress_player', 'powerpressplayer_player_audio' );
+
 	// Remove original filter
-	remove_filter( 'powerpress_player', 'powerpressplayer_player_audio', 10 );
+	if ($has_filter !== FALSE) {
+		remove_filter( 'powerpress_player', 'powerpressplayer_player_audio', 10 );
+	}
 
 	if( empty($post->ID) || !is_object($post) ) {
-		add_filter( 'powerpress_player', 'powerpressplayer_player_audio', 10, 3 );
+		if ($has_filter !== FALSE) {
+			add_filter( 'powerpress_player', 'powerpressplayer_player_audio', 10, 3 );
+		}
 		return $content;
 	}
 		
 	$waveform = get_post_meta($post->ID, 'waveform', TRUE);
 	
 	if (empty($waveform)) {
-		add_filter( 'powerpress_player', 'powerpressplayer_player_audio', 10, 3 );
+		if ($has_filter !== FALSE) {
+			add_filter( 'powerpress_player', 'powerpressplayer_player_audio', 10, 3 );
+		}
 		return $content;
 	}
 	
