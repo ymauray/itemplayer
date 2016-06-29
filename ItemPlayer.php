@@ -1,17 +1,19 @@
 <?php
 /*
-Plugin Name: Item Player
-Plugin URI: http://yma.dk/wordpress/itemplayer/
-Description: HTML5 "soundcloud-like" audio player. 
-Version: 1.0
-Author: Yannick Mauray
-Author URI: http://yma.dk/wordpress
+Plugin Name:        Item Player
+Plugin URI:         http://yma.dk/wordpress/itemplayer/
+GitHub Plugin URI:  https://github.com/ymauray/yma-player
+GitHub Branch:      master
+Description:        HTML5 "soundcloud-like" audio player.
+Version:            1.0.1
+Author:             Yannick Mauray
+Author URI:         http://yma.dk/wordpress
 Contributors:
 Yannick Mauray (Euterpia Radio)
 
 Credits:
 
-Copyright 2012 Yannick Mauray
+Copyright 2012-2016 Yannick Mauray
 
 License: GPL v3 (http://www.gnu.org/licenses/gpl-3.0.txt)
 */
