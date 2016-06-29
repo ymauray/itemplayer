@@ -5,7 +5,7 @@ Plugin URI:         http://yma.dk/wordpress/itemplayer/
 GitHub Plugin URI:  https://github.com/ymauray/yma-player
 GitHub Branch:      master
 Description:        HTML5 "soundcloud-like" audio player.
-Version:            1.0.1
+Version:            1.0.2
 Author:             Yannick Mauray
 Author URI:         http://yma.dk/wordpress
 Contributors:
