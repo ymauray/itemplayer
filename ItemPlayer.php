@@ -75,17 +75,19 @@ function powerpress_itemplayer($content, $media_url, $EpisodeData = array()) {
 	
 	global $post;
 	
-	remove_filter('powerpress_player', 'powerpressplayer_player_audio', 10, 3);
-	remove_filter('powerpress_player', 'powerpressplayer_player_video', 10, 3);
-	remove_filter('powerpress_player', 'powerpressplayer_player_other', 10, 3);
+	// Remove original filter
+	remove_filter( 'powerpress_player', 'powerpressplayer_player_audio', 10 );
 
-	if( empty($post->ID) || !is_object($post) )
-		return powerpressplayer_player_audio($content, $media_url, $EpisodeData);
-	
+	if( empty($post->ID) || !is_object($post) ) {
+		add_filter( 'powerpress_player', 'powerpressplayer_player_audio', 10, 3 );
+		return $content;
+	}
+		
 	$waveform = get_post_meta($post->ID, 'waveform', TRUE);
 	
 	if (empty($waveform)) {
-		return powerpressplayer_player_audio($content, $media_url, $EpisodeData);
+		add_filter( 'powerpress_player', 'powerpressplayer_player_audio', 10, 3 );
+		return $content;
 	}
 	
 	$title = get_the_title($post->ID);
